@@ -4,7 +4,7 @@ $$
 \mathbf{a} = \begin{pmatrix} a_1 \\ \dots \\ a_n \end{pmatrix}
 $$
 
-We use bold face lowercase letter to represent vector and normal face lowercase letter to represent the scalar.
+We use bold face lowercase Latin letter to represent vector and normal face lowercase Greek letter to represent the scalar.
 
 The addition and scalar multiplication for a vector $\mathbf{a}$ can be summarized as $\lambda \mathbf{a} + \mathbf{b}$ where $\lambda$ is a scalar and $\mathbf{b}$ is another n-dimensional vector.
 
@@ -35,6 +35,12 @@ If $\b{e}_1, \dots, \b{e}_n$ are mutually orthogonal and $\b{e}_i \neq \b{0}$, t
 	\caption{A illustration of orthogonal basis in $\mathbb{R}^2$}
 \end{figure}
 
+A subspace  $S$ of $\mathbb{R}^n$ is a collection a vectors in which their linear combination also lies within this subspace. That is,
+$\b{a} \in S, \b{b} \in S \Rightarrow \alpha \b{a} + \beta \b{b} \in S$. Here we use uppercase Latin letter to represent set with special structure.
+The maximal number of independent vectors in a subspace is called the dimension of subspace. 
+\begin{example}
+Consider the space spanned by $\b{a}_1 = (1,1,-1), \b{a}_2=(1,-1,1), \b{a}_3=(2,0,0)$. That is $S=\{\alpha \b{a}_1 + \beta \b{a}_2 + \gamma \b{a}_3 | \alpha_1, \beta, \gamma \in \mathbb{R}\}$. Since $\b{a}_3 = \b{a}_1 + \b{a}_2$ and $\b{a}_1$ is independent with $\b{a}_2$, $ \mathrm{Dim}(S) = 2$.
+\end{example}
 \section{Matrix and its property}
 In the above section, we have $\b{a} = \sum_{i=1}^m c_i \b{e}_i$ where $m=n$. In this section, we are not restricted to the case $m=n$. Let $\b{e}_i = (e_i^1, \dots, e_i^n)$. We can write the expression in the following form:
 \begin{equation}
@@ -49,7 +55,9 @@ we have the following sufficient notation for the transformation:
 \begin{equation}
 \b{a} = \b{E}\, \b{c}
 \end{equation}
-The dimension for a matrix $\b{E}$ is characterized by two numbers $(m,n)$. We call $\b{E}$ is a $m\times n$ matrix.
+Let $S=\{\b{y} | \b{y} = \b{E}\b{x}, \b{x} \in \mathbb{R}^m\}$. Then $S$ is a subspace of $\mathbb{R}^n$, which is called the image space of matrix $\b{E}$ and denoted by $\mathrm{Img}(\b{E})$. The dimension of $S$ is called the rank of the matrix $\b{E}$, denoted as $\mathrm{rank}(\b{E})$. It is the maximum number of independent column vectors within $\{\b{e}_1, \dots, \b{e}_m\}$.
+
+The dimension for a matrix $\b{E}$ is characterized by two numbers $(n,m)$. We call $\b{E}$  a $n\times m$ matrix.
 
 The addition and scalar multiplication for a matrix $\b{E}$ can be defined similarly. Let $\b{C} = \lambda \b{A} + \b{B}$ where $\b{A}, \b{B}$ have the same dimension, then $\b{C}_{ij} = \lambda \b{A}_{ij} + \b{B}_{ij}$.
 
@@ -58,4 +66,18 @@ Suppose we have two matrices $\b{A}$ and $\b{B}$.  $A$ is with dimension $(m,n)$
 \begin{exercise}
 Suppose $\b{A}, \b{B}, \b{C}$ are $m\times n, n\times r, r \times t$ matrices respectively.	Show that $\b{A}(\b{B}\b{C}) = (\b{A}\b{B})\b{C}$.
 \end{exercise}
+
+
 \section{Linear Equation System}
+This section reviews the theory to solve equation $\b{A}\b{x}=\b{b}$ where $\b{A}$ is a $m \times n$ matrix, $\b{b}, \b{x}$ are n dimensional vectors and $\b{A}, \b{b}$ are known.
+
+Suppose we can find a solution $\b{A}\b{x_0} = \b{b}$. Then $\b{A}(\b{x}-\b{x_0})=\b{0}$. Let $S = \{\b{y} | \b{A}\b{y}=\b{0}\}$, which is the solution space of the linear equation system. Then $S$ is a subspace of $\mathbb{R}^n$. $S$ is called the kernel(null space) of matrix $\b{A}$ and denoted by $\mathrm{ker}(\b{A})$. The dimension of $S$ is called the nullity of matrix $\b{A}$, denoted as $\mathrm{null}(\b{A})$.
+
+The dimension formula states that $\mathrm{rank}(\b{A}) + \mathrm{null}(\b{A}) = n$.
+
+There are three cases to the solution of equation $\b{A}\b{x}=\b{b}$:
+\begin{enumerate}
+\item $\b{b} \not\in \mathrm{Img}(\b{A})$, no solution exists
+\item $\mathrm{null}(\b{A}) = n$ and $\b{b} \in \mathrm{Img}(\b{A})$, one and only one solution exists
+\item $\mathrm{null}(\b{A}) < n$ and $\b{b} \in \mathrm{Img}(\b{A})$, infinite solution
+\end{enumerate}
