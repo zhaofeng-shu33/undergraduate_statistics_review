@@ -1,5 +1,5 @@
 \section{Vectors in n dimensional space}
-An n-dimensional Euclidean space $\mathbb{R}^n$ is a natural extension of 2 dimensional Euclidean place and 3 dimensional Euclidean space. An n-dimensional vector is represented as a row vector or column vector by $\mathbf{a} = (a_1, \dots, a_n)$ or 
+An n-dimensional Euclidean space $\mathbb{R}^n$ is a natural extension of 2-dimensional Euclidean plane and 3-dimensional Euclidean space. An n-dimensional vector is represented as a row vector  by $\mathbf{a} = (a_1, \dots, a_n)$ or column vector by 
 $$
 \mathbf{a} = \begin{pmatrix} a_1 \\ \dots \\ a_n \end{pmatrix}
 $$
@@ -12,9 +12,9 @@ To write it in specific form, we have $\lambda \mathbf{a} + \mathbf{b} = (\lambd
 
 The inner product of two n-dimensional vector is defined as $\b{a} \cdot \b{b} = \sum_{i=1}^n a_i b_i$. It is an extension of inner product of two vectors in 2 or 3 dimensional Euclidean space. If $\b{a} \cdot \b{b} = 0 $, we call $\b{a}$ is orthogonal to $\b{b}$.
 
-The 2 norm for a vector $\b{a}$ is defined as $\norm{\b{a}}_2 = \sqrt{\b{a}\cdot \b{a}}$.
+The 2-norm for a vector $\b{a}$ is defined as $\norm{\b{a}}_2 = \sqrt{\b{a}\cdot \b{a}}$.
 
-There are some notation simplification in other places. For example, 2 norm is the default norm for a vector, we can write it simply as $\norm{\b{a}}$. If the summation index range is obvious, we can write $\sum_{i}$ instead of $\sum_{i=1}^n$.
+There are some notation simplification in other places. For example, 2-norm is the default norm for a vector, we can write it simply as $\norm{\b{a}}$. If the summation index range is obvious, we can write $\sum_{i}$ instead of $\sum_{i=1}^n$.
 
 \section{Basis in n-dimensional space}
 Given $r$ vectors $\b{a}_1 \dots, \b{a}_r$ in an n-dimensional space, we say they are independent if $ \sum_{i=1}^r c_i \b{a}_i = 0 \Rightarrow c_i = \b{0} \textrm{ for } i=1,\dots r$.
@@ -26,13 +26,13 @@ A fundamental theorem states that for an n-dimensional space, there exists $n$ v
 
 Suppose $\b{e}_1, \dots, \b{e}_n$ are n independent vectors. For another vector $\b{a}$, since
 $\b{e}_1, \dots, \b{e}_n, \b{a}$ are dependent vectors, we can show that there exists unique $c_i$ such that
-$\b{a} = \sum_{i=1}^n c_i \b{e}_i$. We call $\b{e}_i, i=1,\dots n$ a basis of $\mathbb{R}^n$ and $(c_1, \dots, c_n)$ is the coordinate of the vector $\b{a}$.
+$\b{a} = \sum_{i=1}^n c_i \b{e}_i$. We call $\b{e}_i, i=1,\dots, n$ a basis of $\mathbb{R}^n$ and $(c_1, \dots, c_n)$ is the coordinate of the vector $\b{a}$.
 
-If $\b{e}_1, \dots, \b{e}_n$ are mutually orthogonal and $\b{e}_i \neq \b{0}$, they form an orthogonal basis of $\mathbb{R}^n$. Indeed,  for $\sum_{i=1}^n c_i \b{e}_i = \b{0}$, applying dot product with $\b{e}_j$ on both side of the equation, we can get $ c_j \norm{\b{e}_j}_2^2 = 0 $. Then $c_j = 0$. and $\b{e}_1, \dots, \b{e}_n$ are mutually independent. The coordinate of $\b{a}$ with respect to an orthogonal basis is easy to compute. $\b{a} = \sum_{i=1}^n c_i \b{e}_i \Rightarrow c_i = \frac{\b{a}\cdot \b{e}_i}{\b{e}_i\cdot \b{e}_i}$
+If $\b{e}_1, \dots, \b{e}_n$ are mutually orthogonal and $\b{e}_i \neq \b{0}$, they form an orthogonal basis of $\mathbb{R}^n$. Indeed,  for $\sum_{i=1}^n c_i \b{e}_i = \b{0}$, applying dot product with $\b{e}_j$ on both side of the equation, we can get $ c_j \norm{\b{e}_j}_2^2 = 0 $. Then $c_j = 0$. And $\b{e}_1, \dots, \b{e}_n$ are mutually independent. The coordinate of $\b{a}$ with respect to an orthogonal basis is easy to compute. $\b{a} = \sum_{i=1}^n c_i \b{e}_i \Rightarrow c_i = \frac{\b{a}\cdot \b{e}_i}{\b{e}_i\cdot \b{e}_i}$
 
 A subspace  $S$ of $\mathbb{R}^n$ is a collection a vectors in which their linear combination also lies within this subspace. That is,
 $\b{a} \in S, \b{b} \in S \Rightarrow \alpha \b{a} + \beta \b{b} \in S$. Here we use uppercase Latin letter to represent set with special structure.
-The maximal number of independent vectors in a subspace is called the dimension of subspace. 
+The maximal number of independent vectors in a subspace is called the dimension of subspace, denoted as $\mathrm{Dim}(S)$.
 \begin{example}
 Consider the space spanned by $\b{a}_1 = (1,1,-1), \b{a}_2=(1,-1,1), \b{a}_3=(2,0,0)$. That is $S=\{\alpha \b{a}_1 + \beta \b{a}_2 + \gamma \b{a}_3 | \alpha, \beta, \gamma \in \mathbb{R}\}$. Since $\b{a}_3 = \b{a}_1 + \b{a}_2$ and $\b{a}_1$ is independent with $\b{a}_2$, $ \mathrm{Dim}(S) = 2$.
 \end{example}
@@ -43,20 +43,20 @@ In the above section, we have
 \end{equation}
 In this section, we suppose $\b{a}, \b{e}_i$ are m-dimensional vectors. Let $\b{e}_i = (e_i^1, \dots, e_i^m)$. We can write the expression in the following form:
 \begin{equation}
-	\begin{pmatrix} a_1 \\ a_2 \\ \dots \\ a_n \end{pmatrix}
-	 = \begin{pmatrix} e^1_1 & e^1_2 & \dots & e^1_m \\ e^2_1 & e^2_2 & \dots & e^2_m \\ 
+	\begin{pmatrix} a_1 \\ a_2 \\ \dots \\ a_m \end{pmatrix}
+	 = \begin{pmatrix} e^1_1 & e^1_2 & \dots & e^1_n \\ e^2_1 & e^2_2 & \dots & e^2_n \\ 
 	 	\vdots & \vdots & \dots & \vdots \\
-	 	 e^n_1 & e^n_2 & \dots & e^n_m \end{pmatrix} \begin{pmatrix} c_1 \\ c_2 \\ \dots \\ c_m \end{pmatrix}
+	 	 e^m_1 & e^m_2 & \dots & e^m_n \end{pmatrix} \begin{pmatrix} c_1 \\ c_2 \\ \dots \\ c_n \end{pmatrix}
 \end{equation}
-The linear transformation from vector $\b{c}$ to $\b{a}$ is represented by the matrix $\b{E}$, which has $n$ rows, $m$ columns and $\b{E}_{ij} = e^i_j$.
-Matrix $\b{E}$ transforms a m-dimensional vector $\b{c}$ to an n dimensional vector $\b{a}$ and 
+The linear transformation from vector $\b{c}$ to $\b{a}$ is represented by the matrix $\b{E}$, which has $m$ rows, $n$ columns and $\b{E}_{ij} = e^i_j$.
+Matrix $\b{E}$ transforms an n-dimensional vector $\b{c}$ to a m-dimensional vector $\b{a}$ and 
 we have the following sufficient notation for the transformation:
 \begin{equation}
 \b{a} = \b{E}\, \b{c}
 \end{equation}
-Let $S=\{\b{y} | \b{y} = \b{E}\b{x}, \b{x} \in \mathbb{R}^m\}$. Then $S$ is a subspace of $\mathbb{R}^n$, which is called the image space of matrix $\b{E}$ and denoted by $\mathrm{Img}(\b{E})$. The dimension of $S$ is called the rank of the matrix $\b{E}$, denoted as $\mathrm{rank}(\b{E})$. It is the maximum number of independent column vectors within $\{\b{e}_1, \dots, \b{e}_m\}$.
+Let $S=\{\b{y} \in \mathbb{R}^m | \b{y} = \b{E}\b{x}, \b{x} \in \mathbb{R}^n\}$. Then $S$ is a subspace of $\mathbb{R}^m$, which is called the image space of matrix $\b{E}$ and denoted by $\mathrm{Img}(\b{E})$. The dimension of $S$ is called the rank of the matrix $\b{E}$, denoted as $\mathrm{rank}(\b{E})$. It is the maximum number of independent column vectors within $\{\b{e}_1, \dots, \b{e}_m\}$.
 
-The dimension for a matrix $\b{E}$ is characterized by two numbers $(n,m)$. We call $\b{E}$  a $n\times m$ matrix.
+The dimension for a matrix $\b{E}$ is characterized by two numbers $(m,n)$. We call $\b{E}$  a $m\times n$ matrix.
 
 The addition and scalar multiplication for a matrix $\b{E}$ can be defined similarly. Let $\b{C} = \lambda \b{A} + \b{B}$ where $\b{A}, \b{B}$ have the same dimension, then $\b{C}_{ij} = \lambda \b{A}_{ij} + \b{B}_{ij}$.
 
@@ -70,7 +70,7 @@ Suppose $\b{A}, \b{B}, \b{C}$ are $m\times n, n\times r, r \times t$ matrices re
 \section{Linear Equation System}
 This section reviews the theory to solve equation $\b{A}\b{x}=\b{b}$ where $\b{A}$ is a $m \times n$ matrix, $\b{b}, \b{x}$ are n dimensional vectors and $\b{A}, \b{b}$ are known.
 
-Suppose we can find a solution $\b{A}\b{x_0} = \b{b}$. Then $\b{A}(\b{x}-\b{x_0})=\b{0}$. Let $S = \{\b{y} | \b{A}\b{y}=\b{0}\}$, which is the solution space of the linear equation system. Then $S$ is a subspace of $\mathbb{R}^n$. $S$ is called the kernel(null space) of matrix $\b{A}$ and denoted by $\mathrm{ker}(\b{A})$. The dimension of $S$ is called the nullity of matrix $\b{A}$, denoted as $\mathrm{null}(\b{A})$.
+Suppose we can find a solution $\b{A}\b{x_0} = \b{b}$. Then $\b{A}(\b{x}-\b{x_0})=\b{0}$ for any other solution $\b{x}$. Let $S = \{\b{x} \in \mathbb{R}^n | \b{A}\b{x}=\b{0}\}$, which is the solution space of the linear equation system. Then $S$ is a subspace of $\mathbb{R}^n$. $S$ is called the kernel (or null space) of matrix $\b{A}$ and denoted by $\mathrm{ker}(\b{A})$. The dimension of $S$ is called the nullity of matrix $\b{A}$, denoted as $\mathrm{null}(\b{A})$.
 
 The dimension formula states that $\mathrm{rank}(\b{A}) + \mathrm{null}(\b{A}) = n$.
 
@@ -78,5 +78,5 @@ There are three cases to the solution of equation $\b{A}\b{x}=\b{b}$:
 \begin{enumerate}
 \item $\b{b} \not\in \mathrm{Img}(\b{A})$, no solution exists
 \item $\mathrm{rank}(\b{A}) = n$ and $\b{b} \in \mathrm{Img}(\b{A})$, one and only one solution exists
-\item $\mathrm{rank}(\b{A}) < n$ and $\b{b} \in \mathrm{Img}(\b{A})$, infinite solution
+\item $\mathrm{rank}(\b{A}) < n$ and $\b{b} \in \mathrm{Img}(\b{A})$, there are infinite solutions
 \end{enumerate}
