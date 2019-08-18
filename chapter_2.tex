@@ -1,0 +1,34 @@
+\section{Matrix transformation}
+In the last chapter, we introduce that a matrix transforms a vector into another vector. A matrix can also transforms a matrix into another matrix. In this case, we treat the transformed matrix as a collection of column vectors. To make this transformation useful, we consider square symmetric matrix in this section.
+
+For square matrix, recall the definition of inverse matrix, matrix transpose, diagonal matrix and unit matrix. There explanation is omitted in this section.
+We call a square matrix $\b{U}$ orthogonal matrix if $\b{U}\b{U}^\t = \b{U}^\t\b{U}= \b{I}$. The columns or rows of an orthogonal matrix forms a basis in $\mathbb{R}^n$
+
+Let $\b{A}$ be an n-dimensional square symmetric matrix. That is, $\b{A}$ has n rows and n columns. $\b{A}_{ij} = \b{A}_{ji}$. A fundamental theorem says there exists an orthogonal matrix $B$ such that 
+$A = B^\t \Sigma B$ where $\Sigma$　is an diagonal matrix.
+
+\section{random vectors}
+Random vectors are collection of 1-dimensional random variables. Let $\bm{X} = (X_1, \dots, X_n)$ 
+represent a random vector whose probability measure are in $\mathbb{R}^n$.
+That is, there exists a cumulative distribution function (cdf) $F_{\b{X}}: \mathbb{R}^n \rightarrow [0,1]$ 
+such that $F_{\bm{X}}(\b{x}) = \Pr(X_1 \leq x_1, \dots, X_n \leq x_n)$ where $ \b{x} = (x_1, \dots, x_n)$.
+Here we use italic bold face uppercase Latin letter to represent random vector and normal uppercase Latin letter to denote random variable. We can omit the subscript $X$ if no disambiguity is made. For continuous random vector, $F_{\bm{X}}$ is differential in $\mathbb{R}^n$. Some form of its derivative is called probability density function (pdf) $f_{\bm{X}}(\b{x})$, expressed commonly in integral form as
+\begin{equation}
+F_{\bm{X}}(\b{x}) = \int_{-\infty}^{x_1}\dots\int_{-\infty}^{x_n} f_{\bm{X}}(\b{x}) dx_1 \dots dx_n
+\end{equation}
+We can get cdf and pdf for the single random variable $X_i$ from the multivariate function. That is
+$ F_{X_i}(x_i) = \displaystyle\lim_{x_j \to +\infty, j\neq i} F_{\bm{X}}(\b{x})$ and 
+$ f_{X_1}(x_1) = \iint f_{\bm{X}}(\b{x})dx_2 \dots d x_n$ (use $i=1$ for example).
+$F_{X_i}(x_i)$ is called the marginal distribution and $f_{X_i}(x_i)$ is called the marginal density.
+
+\begin{example}
+	Let $(X_1, X_2)$ is 2-variate normally distributed,  the pdf has the following form
+\begin{equation}
+f(x_1, x_2) = \frac{1}{2\pi \sigma_a \sigma_b \sqrt{1-r^2}} \exp(-\frac{1}{2(1-r^2)} \left(\frac{(x_1-a)^2}{\sigma_a^2} + \frac{(x_2-b)^2}{\sigma_b^2} -\frac{2r(x_1-a)(x_2-b)}{\sigma_a \sigma_b}\right)) 
+\end{equation}
+Let we compute the marginal density for $X_1$. Indeed by using the techniques in double integral, we have
+\begin{equation}
+f(x_1) = \frac{1}{\sqrt{2\pi}\sigma_a} \exp(-\frac{(x-a)^2}{2\sigma_a^2})
+\end{equation}
+
+\end{example}
