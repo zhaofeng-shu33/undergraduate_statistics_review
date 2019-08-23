@@ -5,7 +5,7 @@ For square matrix, recall the definition of inverse matrix, matrix transpose, di
 We call a square matrix $\b{U}$ orthogonal matrix if $\b{U}\b{U}^\t = \b{U}^\t\b{U}= \b{I}$. The columns or rows of an orthogonal matrix forms a basis in $\mathbb{R}^n$
 
 Let $\b{A}$ be an n-dimensional square symmetric matrix. That is, $\b{A}$ has n rows and n columns. $\b{A}_{ij} = \b{A}_{ji}$. A fundamental theorem says there exists an orthogonal matrix $B$ such that 
-$A = B^\t \Sigma B$ where $\Sigma$　is an diagonal matrix.
+$A = B^\t \Sigma B$ where $\Sigma$ is an diagonal matrix.
 
 \section{random vectors}
 Random vectors are collection of 1-dimensional random variables. Let $\bm{X} = (X_1, \dots, X_n)$ 
@@ -21,7 +21,7 @@ $ F_{X_i}(x_i) = \displaystyle\lim_{x_j \to +\infty, j\neq i} F_{\bm{X}}(\b{x})$
 $ f_{X_1}(x_1) = \iint f_{\bm{X}}(\b{x})dx_2 \dots d x_n$ (use $i=1$ for example).
 $F_{X_i}(x_i)$ is called the marginal distribution and $f_{X_i}(x_i)$ is called the marginal density.
 
-\begin{example}
+\begin{example}\label{ex:g2}
 	Let $(X_1, X_2)$ is 2-variate normally distributed,  the pdf has the following form
 \begin{equation}
 f(x_1, x_2) = \frac{1}{2\pi \sigma_a \sigma_b \sqrt{1-r^2}} \exp(-\frac{1}{2(1-r^2)} \left(\frac{(x_1-a)^2}{\sigma_a^2} + \frac{(x_2-b)^2}{\sigma_b^2} -\frac{2r(x_1-a)(x_2-b)}{\sigma_a \sigma_b}\right)) 
@@ -32,3 +32,6 @@ f(x_1) = \frac{1}{\sqrt{2\pi}\sigma_a} \exp(-\frac{(x-a)^2}{2\sigma_a^2})
 \end{equation}
 
 \end{example}
+
+\section{Multivariate Gaussian Distribution}
+Example \ref{ex:g2} shows the case of multivariate Gaussian distribution when the dimension is 2. Generally, in n dimension, given a vector $\b{\mu}$ and positive definite matrix $$.
