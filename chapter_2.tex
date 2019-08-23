@@ -5,7 +5,7 @@ To explain this property, first recall the definition of inverse matrix, matrix 
 we call it the orthogonal matrix which satisfies $\b{U}\b{U}^\t = \b{U}^\t\b{U}= \b{I}$. The columns or rows of an orthogonal matrix forms a basis in $\mathbb{R}^n$.
 
 Let $\b{A}$ be an n-dimensional square symmetric matrix. That is, $\b{A}$ has n rows and n columns. $\b{A}_{ij} = \b{A}_{ji}$. A fundamental theorem says there exists an orthogonal matrix $\b{B}$ such that 
-$\b{A} = \b{B} \b{\Sigma} \b{B}^\t$ where $\b{\Sigma}$ is a diagonal matrix. Let $ \b{\Sigma} = \diag\{ \sigma_1, \dots, \sigma_n \}, \b{B} =  (\b{b}_1, \dots, \b{b}_n)$. We can write $\b{A} \b{b}_i = \sigma_i\b{b}_i $ for $i=1, \dots, n $. We call $\sigma_i$ the eigenvalue of the square matrix $\b{A}$ and $\b{b}_i$ the corresponding eigenvector. If all $\sigma_i \geq 0$, the symetric matrix $\b{A}$ is positive definite. In such case, we have $\b{x}^\t \b{A} \b{x} \geq 0$ for all $\b{x} \in \mathbb{R}^n$.
+$\b{A} = \b{B} \b{\Lambda} \b{B}^\t$ where $\b{\Lambda}$ is a diagonal matrix. Let $ \b{\Lambda} = \diag\{ \sigma_1, \dots, \sigma_n \}, \b{B} =  (\b{b}_1, \dots, \b{b}_n)$. We can write $\b{A} \b{b}_i = \sigma_i\b{b}_i $ for $i=1, \dots, n $. We call $\sigma_i$ the eigenvalue of the square matrix $\b{A}$ and $\b{b}_i$ the corresponding eigenvector. If all $\sigma_i > 0$, the symetric matrix $\b{A}$ is positive definite. In such case, we have $\b{x}^\t \b{A} \b{x} > 0$ for all $\b{x} \in \mathbb{R}^n$.
 
 Recall the concept of determinant of square 
 
@@ -37,4 +37,7 @@ f(x_1) = \frac{1}{\sqrt{2\pi}\sigma_a} \exp(-\frac{(x-a)^2}{2\sigma_a^2})
 \end{example}
 
 \section{Multivariate Gaussian Distribution}
-Example \ref{ex:g2} shows the case of multivariate Gaussian distribution when the dimension is 2. Generally, in n dimension, given a vector $\b{\mu}$ and positive definite matrix $$.
+Example \ref{ex:g2} shows the case of multivariate Gaussian distribution when the dimension is 2. Generally, in n dimension, given a vector $\b{\mu}$ and positive definite matrix $\b{\Sigma}$, the pdf of Gaussian distribution has the following form:
+\begin{equation}
+f(\b{x}; \b{\mu}, \b{\Sigma}) = \frac{1}{(2\pi)^{n/2} \abs{\b{\Sigma}}^{1/2}} \exp \left(-\frac{1}{2} \right)
+\end{equation}
