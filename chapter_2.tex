@@ -1,11 +1,13 @@
-\section{Matrix transformation}
-In the last chapter, we introduce that a matrix transforms a vector into another vector. A matrix can also transforms a matrix into another matrix. In this case, we treat the transformed matrix as a collection of column vectors. To make this transformation useful, we consider square symmetric matrix in this section.
+\section{Square symmetric matrix}
+In the last chapter, we introduce that a matrix transforms a vector into another vector. Generally, the transformation is useful when the matrix preserves the inner product. To be more specific, consider $ n \times n $ square matrix $\b{U}$. If $ \b{x} \cdot \b{y} =  \b{U}\b{x} \cdot \b{U}\b{y}$ for any $\b{x}, \b{y} \in \mathbb{R}^n$, we call the transformation preserves the inner product.
 
-For square matrix, recall the definition of inverse matrix, matrix transpose, diagonal matrix and unit matrix. There explanation is omitted in this section.
-We call a square matrix $\b{U}$ orthogonal matrix if $\b{U}\b{U}^\t = \b{U}^\t\b{U}= \b{I}$. The columns or rows of an orthogonal matrix forms a basis in $\mathbb{R}^n$
+To explain this property, first recall the definition of inverse matrix, matrix transpose, diagonal matrix and unit matrix for square matrix. If the transformation $\b{U}$ preserves the inner product, 
+we call it the orthogonal matrix which satisfies $\b{U}\b{U}^\t = \b{U}^\t\b{U}= \b{I}$. The columns or rows of an orthogonal matrix forms a basis in $\mathbb{R}^n$.
 
-Let $\b{A}$ be an n-dimensional square symmetric matrix. That is, $\b{A}$ has n rows and n columns. $\b{A}_{ij} = \b{A}_{ji}$. A fundamental theorem says there exists an orthogonal matrix $B$ such that 
-$A = B^\t \Sigma B$ where $\Sigma$　is an diagonal matrix.
+Let $\b{A}$ be an n-dimensional square symmetric matrix. That is, $\b{A}$ has n rows and n columns. $\b{A}_{ij} = \b{A}_{ji}$. A fundamental theorem says there exists an orthogonal matrix $\b{B}$ such that 
+$\b{A} = \b{B} \b{\Sigma} \b{B}^\t$ where $\b{\Sigma}$ is a diagonal matrix. Let $ \b{\Sigma} = \diag\{ \sigma_1, \dots, \sigma_n \}, \b{B} =  (\b{b}_1, \dots, \b{b}_n)$. We can write $\b{A} \b{b}_i = \sigma_i\b{b}_i $ for $i=1, \dots, n $. We call $\sigma_i$ the eigenvalue of the square matrix $\b{A}$ and $\b{b}_i$ the corresponding eigenvector. If all $\sigma_i \geq 0$, the symetric matrix $\b{A}$ is positive definite. In such case, we have $\b{x}^\t \b{A} \b{x} \geq 0$ for all $\b{x} \in \mathbb{R}^n$.
+
+Recall the concept of determinant of square 
 
 \section{random vectors}
 Random vectors are collection of 1-dimensional random variables. Let $\bm{X} = (X_1, \dots, X_n)$ 
