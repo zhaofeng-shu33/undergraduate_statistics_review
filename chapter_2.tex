@@ -5,9 +5,10 @@ To explain this property, first recall the definition of inverse matrix, matrix 
 we call it the orthogonal matrix which satisfies $\b{U}\b{U}^\t = \b{U}^\t\b{U}= \b{I}$. The columns or rows of an orthogonal matrix forms a basis in $\mathbb{R}^n$.
 
 Let $\b{A}$ be an n-dimensional square symmetric matrix. That is, $\b{A}$ has n rows and n columns. $\b{A}_{ij} = \b{A}_{ji}$. A fundamental theorem says there exists an orthogonal matrix $\b{B}$ such that 
-$\b{A} = \b{B} \b{\Lambda} \b{B}^\t$ where $\b{\Lambda}$ is a diagonal matrix. Let $ \b{\Lambda} = \diag\{ \sigma_1, \dots, \sigma_n \}, \b{B} =  (\b{b}_1, \dots, \b{b}_n)$. We can write $\b{A} \b{b}_i = \sigma_i\b{b}_i $ for $i=1, \dots, n $. We call $\sigma_i$ the eigenvalue of the square matrix $\b{A}$ and $\b{b}_i$ the corresponding eigenvector. If all $\sigma_i > 0$, the symetric matrix $\b{A}$ is positive definite. In such case, we have $\b{x}^\t \b{A} \b{x} > 0$ for all $\b{x} \in \mathbb{R}^n$.
+$\b{A} = \b{B} \b{\Lambda} \b{B}^\t$ where $\b{\Lambda}$ is a diagonal matrix. Let $ \b{\Lambda} = \diag\{ \sigma_1, \dots, \sigma_n \}, \b{B} =  (\b{b}_1, \dots, \b{b}_n)$. We can write $\b{A} \b{b}_i = \sigma_i\b{b}_i $ for $i=1, \dots, n $. We call $\sigma_i$ the eigenvalue of the square matrix $\b{A}$ and $\b{b}_i$ the corresponding eigenvector. If all $\sigma_i > 0$, the symetric matrix $\b{A}$ is positive definite. In such case, we have $\b{x}^\t \b{A} \b{x} > 0$ for all $\b{x} \in \mathbb{R}^n$. For a positive definite matrix $\b{A}$, we can find a matrix $\b{L}$ such that $\b{A} = \b{L}\b{L}^\t $.
 
-Recall the concept of determinant of square 
+Recall the concept of determinant of square matrix. We use $\abs{\b{A}}$ to denote the determinant of the matrix $\b{A}$.
+One important property is that $\abs{\b{A}\b{B}} = \abs{\b{A}}\abs{\b{B}}$.
 
 
 \section{random vectors}
@@ -35,9 +36,16 @@ f(x_1) = \frac{1}{\sqrt{2\pi}\sigma_a} \exp(-\frac{(x-a)^2}{2\sigma_a^2})
 \end{equation}
 
 \end{example}
-
+Let $g(\cdot): \mathbb{R}^n \to \mathbb{R}^n$ be an invertible function and $\bm{y} = g(\bm{x})$ be the transformation of $\bm{x}$.
+If the pdf of $\bm{x}$ is $f(\b{x})$, we can get the pdf of $\bm{y}$ is $f(g^{-1}(\b{y})) \abs{(g^{-1})'(\b{y})}$.
 \section{Multivariate Gaussian Distribution}
-Example \ref{ex:g2} shows the case of multivariate Gaussian distribution when the dimension is 2. Generally, in n dimension, given a vector $\b{\mu}$ and positive definite matrix $\b{\Sigma}$, the pdf of Gaussian distribution has the following form:
+Example \ref{ex:g2} shows the case of multivariate Gaussian distribution when the dimension is 2. Generally, in n dimension, given a vector $\bm{\mu}$ and positive definite matrix $\b{\Sigma}$, the pdf of Gaussian distribution has the following form:
 \begin{equation}
-f(\b{x}; \b{\mu}, \b{\Sigma}) = \frac{1}{(2\pi)^{n/2} \abs{\b{\Sigma}}^{1/2}} \exp \left(-\frac{1}{2} \right)
+f(\b{x}; \bm{\mu}, \b{\Sigma}) = \frac{1}{(2\pi)^{n/2} \abs{\b{\Sigma}}^{1/2}} \exp \left(-\frac{1}{2} (\b{x} - \bm{u})^\t \b{\Sigma}^{-1} (\b{x} - \bm{\mu})\right)
 \end{equation}
+We can show that the integral of $f$ over $\mathbb{R}^n$ is indeed 1, thus satisfying the normalization constraint. Indeed, assume $\b{\Sigma}^{-1} = \b{L}^\t \b{L}$ and let $\b{y} = \b{L} (\b{x} - \bm{\mu})$. The integral reduces to
+$$
+\prod_{i=1}^n \left(\int_{\mathbb{R}}\frac{1}{\sqrt{2\pi}} \exp(-\frac{y^2_i}{2}) dy_i\right) = 1
+$$
+
+Let $\bm{y} = \b{L} (\bm{x} - \bm{\mu})$ be the transformation of random vector $\bm{x}$, we can show that $\bm{y}_i \sim N(0, 1)$ and $\bm{y}$ has independent components.  
