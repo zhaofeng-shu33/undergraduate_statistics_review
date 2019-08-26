@@ -38,6 +38,10 @@ f(x_1) = \frac{1}{\sqrt{2\pi}\sigma_a} \exp(-\frac{(x-a)^2}{2\sigma_a^2})
 \end{example}
 Let $g(\cdot): \mathbb{R}^n \to \mathbb{R}^n$ be an invertible function and $\bm{y} = g(\bm{x})$ be the transformation of $\bm{x}$.
 If the pdf of $\bm{x}$ is $f(\b{x})$, we can get the pdf of $\bm{y}$ is $f(g^{-1}(\b{y})) \abs{(g^{-1})'(\b{y})}$.
+
+For a random vector, it has the expectation vector $\E[\bm{X}] = (\E[X_1], \dots, \E[X_n])$ and covariance matrix $\b{\Sigma} $ whose $(i,j)$th entry is $\Cov[X_i, X_j]$. Written in matrix form:
+$ \b{\Sigma} = \E[\bm{X}\bm{X}^T] - \E[\bm{X}] \E[\bm{X}]^T $.
+
 \section{Multivariate Gaussian Distribution}
 Example \ref{ex:g2} shows the case of multivariate Gaussian distribution when the dimension is 2. Generally, in n dimension, given a vector $\bm{\mu}$ and positive definite matrix $\b{\Sigma}$, the pdf of Gaussian distribution has the following form:
 \begin{equation}
@@ -49,3 +53,5 @@ $$
 $$
 
 Let $\bm{y} = \b{L} (\bm{x} - \bm{\mu})$ be the transformation of random vector $\bm{x}$, we can show that $\bm{y}_i \sim N(0, 1)$ and $\bm{y}$ has independent components.  
+
+We can show that for a multivariate Gaussian distribution, $\bm{\mu}$ is the expectation vector and $\b{\Sigma}$ is the covariance matrix.
