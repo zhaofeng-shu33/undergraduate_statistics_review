@@ -5,6 +5,7 @@
 \usepackage{mathtools}
 \usepackage{bm}
 \usepackage{graphicx}
+\newcommand*{\pdv}[3][]{\ensuremath{\frac{\partial^{#1} #2}{\partial #3}}}
 \DeclareMathOperator\E{\mathbb{E}}
 \DeclareMathOperator\Cov{Cov}
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
@@ -22,4 +23,6 @@
 \input{chapter_1.tex}
 \chapter{Multivariate Gaussian Distribution}
 \input{chapter_2.tex}
+\chapter{Matrix Decomposition}
+\input{chapter_3.tex}
 \end{document}

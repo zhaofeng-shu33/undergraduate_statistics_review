@@ -37,7 +37,7 @@ f(x_1) = \frac{1}{\sqrt{2\pi}\sigma_a} \exp(-\frac{(x_1-a)^2}{2\sigma_a^2})
 
 \end{example}
 Let $g(\cdot): \mathbb{R}^n \to \mathbb{R}^n$ be an invertible function and $\bm{y} = g(\bm{x})$ be the transformation of $\bm{x}$.
-If the pdf of $\bm{x}$ is $f(\b{x})$, we can get the pdf of $\bm{y}$ is $f(g^{-1}(\b{y})) \abs{(g^{-1})'(\b{y})}$. Notice the derivate is actually the Jacobian matrix of $g^{-1}$, whose $(i,j)$-th entry is $\frac{\partial (g^{-1})_i}{\partial y_j}$.
+If the pdf of $\bm{x}$ is $f(\b{x})$, we can get the pdf of $\bm{y}$ is $f(g^{-1}(\b{y})) \abs{(g^{-1})'(\b{y})}$. Notice the derivative is actually the Jacobian matrix of $g^{-1}$, whose $(i,j)$-th entry is $\frac{\partial (g^{-1})_i}{\partial y_j}$.
 
 For a random vector, it has the expectation vector $\E[\bm{X}] = (\E[X_1], \dots, \E[X_n])$ and covariance matrix $\b{\Sigma} $ whose $(i,j)$th entry is $\Cov[X_i, X_j]$. Written in matrix form:
 $ \b{\Sigma} = \E[\bm{X}\bm{X}^T] - \E[\bm{X}] \E[\bm{X}]^T $.

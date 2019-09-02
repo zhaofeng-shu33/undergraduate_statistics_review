@@ -1,0 +1,34 @@
+\section{Multivariate Derivative}
+Consider a multivariate function $f: \mathbb{R}^n \to \mathbb{R}$. It maps $\b{x} = (x_1, \dots, x_n) $ to a real number.
+The gradient of $f$ is a natural extension of derivative for a single variable function. It is defined as an n-dimensional vector function.
+$\nabla f: \mathbb{R}^n \to \mathbb{R}^n $
+\begin{equation}
+\nabla f = (\pdv{f}{x_1}, \dots, \pdv{f}{x_n})
+\end{equation}
+For a continuous differentiable function $f$ we have 
+\begin{equation}\label{eq:differential}
+f(x + \b{h} ) = f(x) + \nabla f \cdot \b{h} + o(\norm{\b{h}}_2)
+\end{equation}
+Consider a unit vector $\b{n}$ and a real positive number $t$, for a fixed $\b{x}_0$ we try to find which direction $\b{n}$ makes $f(\b{x}_0 + t \b{n})$ decreases fastly. To describe the problem mathematrically, the optimal $\b{n}$ should satisfy the following condition:
+\begin{equation}\label{eq:decrease_fastest}
+\forall \norm{\b{v}}_2=1, \exists \epsilon,  \, s.t. f(\b{x}_0 + t \b{n}) \leq f(\b{x}_0 + t \b{v}) \,\forall\, 0 < t < \epsilon
+\end{equation}
+The concept of directional derivative arises from this problem. For any directional vector $\b{n}$, the directional derivative $\pdv{f}{\b{n}}$ satisfies 
+
+\begin{equation}\label{eq:dd}
+f(\b{x}_0 + t \b{n}) = f(\b{x}_0) + 
+ \pdv{f}{\b{n}} t + o(t)
+ \end{equation}
+ 
+Comparing \eqref{eq:dd} with \eqref{eq:differential} gives $\pdv{f}{\b{n}} = \nabla f \cdot \b{n}$.  Therefore, \eqref{eq:decrease_fastest} can be simplified to 
+\begin{equation}\label{eq:find_n}
+\nabla \cdot \b{n} \leq \nabla f \cdot{v}, \, \forall \norm{\b{v}}_2=1
+\end{equation}
+From Cachy's Inequality, $ \nabla f \cdot (-\b{v}) \leq \norm{\nabla f}_2 \norm{\b{v}}_2 = \nabla f \cdot \frac{\nabla f}{\norm{\nabla f}_2}$. Taking $\b{n} = -  \frac{\nabla f}{\norm{\nabla f}_2} $ makes \eqref{eq:find_n} hold.
+$\b{n}$ is the unit vector which has the  opposite direction from $\nabla f $. Many function minimization algorithms are based on this property.
+
+\begin{exercise}
+Consider function $f: \Theta \to \mathbb{R}$, where $\Theta = \{(r, \theta, \phi)| r>0, 0<\theta<\pi, 0<\phi < 2\pi\}$. The specific form of $f$ is $f(r, \theta,\phi) = r \sin \theta \cos\phi$. Try to calculate the gradient of $f$.
+\end{exercise}
+
+In the above, we have discussed the derivative for the scalar function. For vector valued function, the derivative is a matrix instead of a vector and the derivative matrix has another commonly used name called Jacobian matrix.
