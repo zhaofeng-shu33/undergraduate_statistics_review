@@ -9,7 +9,7 @@ For a continuous differentiable function $f$ we have
 \begin{equation}\label{eq:differential}
 f(x + \b{h} ) = f(x) + \nabla f \cdot \b{h} + o(\norm{\b{h}}_2)
 \end{equation}
-Consider a unit vector $\b{n}$ and a real positive number $t$, for a fixed $\b{x}_0$ we try to find which direction $\b{n}$ makes $f(\b{x}_0 + t \b{n})$ decreases fastly. To describe the problem mathematrically, the optimal $\b{n}$ should satisfy the following condition:
+Consider a unit vector $\b{n}$ and a real positive number $t$, for a fixed $\b{x}_0$ we try to find which direction $\b{n}$ makes $f(\b{x}_0 + t \b{n})$ decreases fastly. To describe the problem mathematically, the optimal $\b{n}$ should satisfy the following condition:
 \begin{equation}\label{eq:decrease_fastest}
 \forall \norm{\b{v}}_2=1, \exists \epsilon,  \, s.t. f(\b{x}_0 + t \b{n}) \leq f(\b{x}_0 + t \b{v}) \,\forall\, 0 < t < \epsilon
 \end{equation}
@@ -32,3 +32,12 @@ Consider function $f: \Theta \to \mathbb{R}$, where $\Theta = \{(r, \theta, \phi
 \end{exercise}
 
 In the above, we have discussed the derivative for the scalar function. For vector valued function, the derivative is a matrix instead of a vector and the derivative matrix has another commonly used name called Jacobian matrix.
+
+To write the Jacobian matrix in explicit form, consider $f: \mathbb{R}^n \to \mathbb{R}^m$. As shown by the following equation, the Jacobian matrix of $f$ is an $m\times n$ matrix whose $(i,j)$-th entry is $\pdv{f_i}{x_j}$.
+\begin{equation}
+J = \begin{pmatrix}
+\pdv{f_1}{x_1} & \dots & \pdv{f_1}{x_n} \\
+\vdots & \ddots & \vdots \\
+\pdv{f_m}{x_1} & \dots & \pdv{f_m}{x_n}
+\end{pmatrix}
+\end{equation}
