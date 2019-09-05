@@ -55,3 +55,18 @@ The domain of $(r, \theta, \phi)$ is described by $\Theta =  \{(r, \theta, \phi)
 The concept of derivative can be generalized further to function of matrix. Let $f: \mathbb{R}^{m \times n} \to \mathbb{R}$. We can use the notation $\nabla_{
 	\b{A}} f(\b{A}) $ to denote the derivative, which is a matrix of the same size with $\b{A}$:
 $(\nabla_{\b{A}} f(\b{A}))_{ij} = \pdv{f(\b{A})}{\b{A}_{ij}}$. For example, the matrix determinant can be regarded as the function of matrix.
+
+\section{Matrix Diagonalization}
+For a $n\times n$ matrix $\b{A}$ and column vector $\b{x}$, if $\b{A} \b{x} = \lambda \b{x}$ we call $\lambda$ the eigenvalue and $\b{x}$ the eigenvector of $\b{A}$. For a given eigenvalue, we can show all the eigenvectors form a subspace of $\mathbb{R}^n$.  We call this subspace eigenspace associated with $\lambda$, denoted as $V_{\lambda}=\{\b{x} \in \mathbb{R}^n | \b{A}\b{x} = \lambda \b{x} \}$.
+
+We have introduced how to diagonalize a symmetric matrix in previous part. For general matrix, the diagonalization is not always possible. 
+To diagonalize matrix $A$ means writing $\b{A} = \b{B} \b{\Lambda} \b{B}^{-1}$ where $\b{\Lambda}$ is a diagonal matrix. $\b{\Lambda}$ is actually the eigenvalues of $\b{A}$. Consider
+$\b{A}=\begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$, all its eigenvalues are zero. If $\b{A} = \b{B} \b{\Lambda} \b{B}^{-1}$ holds, then $\b{\Lambda} = \diag\{0,0\}$ which is a contradiction.
+
+$\b{A} = \b{B} \b{\Lambda} \b{B}^{-1}$ is restrictive, if we consider $\b{A} = \b{B} \b{\Lambda} \b{C}$, the diagonalization is always possible even for non-square matrix. This is called singular value decomposition.
+\begin{theorem}
+	For an $m\times n$ matrix, there exists an $m\times m$ orthogonal matrix $\b{B}$ and an $n \times n$ orthogonal matrix $\b{C}$ such that $\b{A} = \b{B} \b{\Lambda} \b{C}^\t$ where $\b{\Lambda}$ is an $m \times n$ rectangular diagonal matrix.
+\end{theorem}
+If $\b{A} = \b{B} \b{\Lambda} \b{C}$, we can get $\b{A}\b{A}^\t = \b{B} \b{\Lambda}\b{\Lambda}^\t \b{B}^\t$ where $\b{\Lambda}\b{\Lambda}^\t$ is a diagonal matrix. That is, columns of $\b{B}$ are the eigenvectors of $\b{A}\b{A}^\t$. Similarly, from $\b{A}^\t \b{A} = \b{C} \b{\Lambda}^\t \b{\Lambda} \b{C}^\t$, we conclude that columns of $\b{C}$ are eigenvectors of $\b{A}^\t \b{A}$.
+
+Since there are columns and rows which are all zeros. we can write the decomposition in a compact form. Let $r = \textrm{rank}(\b{A})$ then $\b{A}$ has $r$ non-zero singular values. $\Lambda_r = \diag\{\sigma_1, \dots, \sigma_r\}$.
