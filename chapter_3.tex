@@ -69,4 +69,4 @@ $\b{A} = \b{B} \b{\Lambda} \b{B}^{-1}$ is restrictive, if we consider $\b{A} = \
 \end{theorem}
 If $\b{A} = \b{B} \b{\Lambda} \b{C}$, we can get $\b{A}\b{A}^\t = \b{B} \b{\Lambda}\b{\Lambda}^\t \b{B}^\t$ where $\b{\Lambda}\b{\Lambda}^\t$ is a diagonal matrix. That is, columns of $\b{B}$ are the eigenvectors of $\b{A}\b{A}^\t$. Similarly, from $\b{A}^\t \b{A} = \b{C} \b{\Lambda}^\t \b{\Lambda} \b{C}^\t$, we conclude that columns of $\b{C}$ are eigenvectors of $\b{A}^\t \b{A}$.
 
-Since there are columns and rows which are all zeros. we can write the decomposition in a compact form. Let $r = \textrm{rank}(\b{A})$ then $\b{A}$ has $r$ non-zero singular values. $\Lambda_r = \diag\{\sigma_1, \dots, \sigma_r\}$.
+Since there are columns and rows which are all zeros. we can write the decomposition in a compact form. Let $r = \textrm{rank}(\b{A})$ then $\b{A}$ has $r$ non-zero singular values. $\Lambda_r = \diag\{\sigma_1, \dots, \sigma_r\}$. Let $\b{B}_r, \b{C}_r$ be the selection of first $r$ columns of corresponding matrix. Then $\b{A} = \b{B}_r \b{\Lambda}_r \b{C}_r^\t$ is the compact form of SVD.
