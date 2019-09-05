@@ -35,9 +35,23 @@ In the above, we have discussed the derivative for the scalar function. For vect
 
 To write the Jacobian matrix in explicit form, consider $f: \mathbb{R}^n \to \mathbb{R}^m$. As shown by the following equation, the Jacobian matrix of $f$ is an $m\times n$ matrix whose $(i,j)$-th entry is $\pdv{f_i}{x_j}$.
 \begin{equation}
-J = \begin{pmatrix}
+J_f = \begin{pmatrix}
 \pdv{f_1}{x_1} & \dots & \pdv{f_1}{x_n} \\
 \vdots & \ddots & \vdots \\
 \pdv{f_m}{x_1} & \dots & \pdv{f_m}{x_n}
 \end{pmatrix}
 \end{equation}
+When $m=n$, $J_f$ is a square matrix and its determinant exists.
+The determinant of Jacobian matrix is used when making a change of variable in calculating multiple integrals.
+\begin{example}
+To calculate	$\iiint_{x^2 + y^2 +z^2 \leq 1} dxdydz$, we make the following variable transformation.
+\begin{align*}
+x & = r \sin \theta \cos \phi \\
+y & = r \sin \theta \sin \phi \\
+z & = r \cos \theta
+\end{align*}
+The domain of $(r, \theta, \phi)$ is described by $\Theta =  \{(r, \theta, \phi)| r \geq 0, 0\leq \theta \leq \pi, 0\leq \phi \leq 2\pi\}$. We can calculate $J_f = r^2 \sin \theta $. In this case, the integral is transformed to $\iiint_{(r, \theta, \phi) \in \Theta} r^2 \sin \theta drd\theta d\phi$, which equals $\frac{4}{3} \pi $.
+\end{example}
+The concept of derivative can be generalized further to function of matrix. Let $f: \mathbb{R}^{m \times n} \to \mathbb{R}$. We can use the notation $\nabla_{
+	\b{A}} f(\b{A}) $ to denote the derivative, which is a matrix of the same size with $\b{A}$:
+$(\nabla_{\b{A}} f(\b{A}))_{ij} = \pdv{f(\b{A})}{\b{A}_{ij}}$. For example, the matrix determinant can be regarded as the function of matrix.
